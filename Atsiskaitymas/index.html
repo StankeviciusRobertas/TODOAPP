@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Login/Registration</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="error-container"></div>
+      <h2>Welcome to TO DO APP</h2>
+      <form>
+        <fieldset>
+          <label for="fname"
+            >Name: <abbr title="Should be entered name">*</abbr></label
+          >
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Vardenis"
+            required
+          />
+
+          <label for="ltname"
+            >Last Name: <abbr title="Should be entered lastName">*</abbr></label
+          >
+          <input
+            type="text"
+            id="ltname"
+            name="ltname"
+            placeholder="Last name"
+            required
+          />
+          <button type="submit" id="login" value="Login">Login</button>
+        </fieldset>
+      </form>
+      <form>
+        <fieldset>
+          <p>For registration press:</p>
+          <button type="submit" id="register" value="Register">Register</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <script src="script.js" async defer></script>
+  </body>
+</html>

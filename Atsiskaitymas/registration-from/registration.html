@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Registration</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+  <body>
+    <form action="">
+      <div id="error-container"></div>
+      <fieldset>
+        <h2>Registration Form</h2>
+        <p>Required fields are followed by *.</p>
+
+        <h3>Contact Information</h3>
+        <label for="fname"
+          >Name: <abbr title="Should be entered name">*</abbr></label
+        >
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Vardenis"
+          required
+        />
+
+        <label for="lastname"
+          >Last Name: <abbr title="Should be entered lastName">*</abbr></label
+        >
+        <input
+          type="text"
+          id="ltname"
+          name="ltname"
+          placeholder="Last name"
+          required
+        />
+
+        <label for="email"
+          >E-mail: <abbr title="Should be entered E-mail">*</abbr></label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="E-mail"
+          required
+        />
+
+        <button type="submit" id="register" value="Sumbit">Register</button>
+      </fieldset>
+    </form>
+
+    <script src="registration.js" async defer></script>
+  </body>
+</html>

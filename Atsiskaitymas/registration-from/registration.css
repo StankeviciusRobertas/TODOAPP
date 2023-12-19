@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Set a light background color */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  fieldset {
+    width: 300px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px; /* Increase padding for better spacing */
+    background-color: #fff; /* Set a white background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border: 1px solid #ddd; /* Add a light border */
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px; /* Slightly reduce margin for labels */
+  }
+
+  input, select, button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px; /* Add padding for better input appearance */
+    margin-bottom: 12px; /* Increase margin for better spacing */
+  }
+
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }

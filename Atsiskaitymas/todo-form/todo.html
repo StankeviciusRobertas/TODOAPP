@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="todo.css" />
+    <title>ToDo App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Welcome to ToDo App</h2>
+      <div id="user-info"></div>
+      <button id="add-task-btn">Add Task</button>
+      <div id="task-form" class="hidden">
+        <h3>Add Task</h3>
+        <label for="task-type">Task Type:</label>
+        <input type="text" id="task-type" required />
+        <label for="task-content">Task Content:</label>
+        <input type="text" id="task-content" required />
+        <label for="end-date">End Date:</label>
+        <input type="datetime-local" id="end-date" required />
+        <button id="submit-task">Submit</button>
+        <div id="todo-list"></div>
+      </div>
+      <div id="task-container"></div>
+    </div>
+    <script src="todo.js" async defer></script>
+  </body>
+</html>
