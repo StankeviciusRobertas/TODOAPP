@@ -1,0 +1,17 @@
+li.drink {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid blue;
+    background-color: grey;
+    color: white;
+}
+
+li.milk {
+    background-color: white;
+    color: black;
+}
+
+li.pretty_water {
+    background-color: green;
+    color: white;
+}

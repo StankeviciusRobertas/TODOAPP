@@ -24,7 +24,7 @@ window.onload = () => {
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Failed to create user');
+                    throw new Error('Toks vartotojas jau egzistuoja');
                 }
                 return response.text(); // read the response as text
             })

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Info</title>
+    <link rel="stylesheet" href="userInfo.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="nav_logo">CodeAcademy</a>
+        <button class="button" id="logout-button" onclick="logout()">
+          Logout
+        </button>
+      </nav>
+    </header>
+
+    <div class="user-info-container">
+      <div class="profile-section">
+        <div class="profile-photo">
+          <img id="profile-photo" src="profile-photo.jpg" alt="Profile Photo" />
+        </div>
+        <div class="user-details">
+          <h2 id="full-name">Name Surname</h2>
+          <p id="personal-code">Personal Code: XXXX</p>
+          <p id="email">Email: example@example.com</p>
+          <p id="phone-number">Phone Number: +1234567890</p>
+        </div>
+      </div>
+      <div class="address-section">
+        <h2>Address</h2>
+        <p id="city">City: City</p>
+        <p id="street">Street: Street</p>
+        <p id="house-number">House Number: 123</p>
+        <p id="flat-number">Flat Number: 456</p>
+      </div>
+      <button class="button" id="edit-button" onclick="editUserInfo()">
+        Edit
+      </button>
+    </div>
+
+    <script src="userInfo.js"></script>
+  </body>
+</html>

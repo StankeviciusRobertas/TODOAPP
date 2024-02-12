@@ -1,0 +1,29 @@
+.border-example{
+    width: 200px;
+    height: 200px;
+    background-color: cornflowerblue;
+
+    /*border-color: black;
+    border-style: solid;
+    border-width: 10px;*/
+    border: solid 10px black;
+    border-radius: 20px;
+}
+
+p {
+    border: 3px dashed green;
+    padding: 10px;
+}
+
+figure {
+    border: 2px solid red;
+    padding: 10px;
+}
+
+img {
+    border: 5px double blue;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto
+}

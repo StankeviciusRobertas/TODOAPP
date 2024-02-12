@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Payment form</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css.css" />
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <h2>Payment Form</h2>
+        <p>Required fields are followed by *.</p>
+
+        <h3>Contact Information</h3>
+        <label for="fname"
+          >Name: <abbr title="Should be entered name">*</abbr></label
+        >
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Vardenis"
+          required
+        />
+
+        <label for="email"
+          >E-mail: <abbr title="Should be entered E-mail">*</abbr></label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="E-mail"
+          required
+        />
+
+        <label for="password"
+          >Password: <abbr title="Should be entered password">*</abbr></label
+        >
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="********"
+          required
+        />
+
+        <h2>Payment Information</h2>
+        <label for="card">Card type:</label>
+        <select id="card" name="card">
+          <option value="visa">Visa</option>
+          <option value="electron">Electron</option>
+          <option value="revolut">Revolut</option>
+          <option value="debitcard">Debit Card</option>
+        </select>
+
+        <label for="card"
+          >Card number:
+          <abbr title="Should be entered your credit card number"
+            >*</abbr
+          ></label
+        >
+        <input
+          type="text"
+          id="card"
+          name="card"
+          pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+        />
+
+        <label for="expiredate"
+          >Expiration date:
+          <abbr title="Should be entered your credit card date">*</abbr></label
+        >
+        <input type="month" id="expiredate" name="expiredate" />
+
+        <hr />
+
+        <label for="checkbox">Agree with terms and conditions</label>
+        <input type="checkbox" />
+
+        <br />
+
+        <button type="submit" value="Sumbit">Validate the payment</button>
+      </fieldset>
+    </form>
+    <script src="" async defer></script>
+  </body>
+</html>

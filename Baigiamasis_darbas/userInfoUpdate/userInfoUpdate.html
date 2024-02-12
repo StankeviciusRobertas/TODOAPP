@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Info - Edit</title>
+    <link rel="stylesheet" href="userInfoUpdate.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="nav_logo">CodeAcademy</a>
+        <button class="button" id="logout-button" onclick="logout()">
+          Logout
+        </button>
+      </nav>
+    </header>
+
+    <div class="user-info-container">
+      <div class="profile-section">
+        <div class="profile-photo">
+          <img id="profile-photo" src="profile-photo.jpg" alt="Profile Photo" />
+          <input type="file" id="profile-photo-input" />
+        </div>
+        <div class="user-details">
+          <h2 id="name">User profile-photo</h2>
+          <label for="name">Name:</label>
+          <input type="text" id="name-input" value="Name" />
+
+          <label for="surname">Surname:</label>
+          <input type="text" id="surname-input" value="Surname" />
+
+          <label for="personal-code">Personal Code:</label>
+          <input type="text" id="personal-code-input" value="XXXX" />
+          <p id="email">
+            Email:
+            <input type="email" id="email-input" value="example@example.com" />
+          </p>
+          <p id="phone-number">
+            Phone Number:
+            <input type="tel" id="phone-number-input" value="+1234567890" />
+          </p>
+        </div>
+      </div>
+      <div class="address-section">
+        <h2>Address</h2>
+        <input type="text" id="city-input" placeholder="City" />
+        <input type="text" id="street-input" placeholder="Street" />
+        <input type="text" id="house-number-input" placeholder="House Number" />
+        <input type="text" id="flat-number-input" placeholder="Flat Number" />
+      </div>
+      <button id="save-button" onclick="saveUserInfo()">Save</button>
+      <button id="create-button" onclick="createUserInfo()">Create</button>
+    </div>
+
+    <script src="userInfoUpdate.js"></script>
+  </body>
+</html>

@@ -25,10 +25,12 @@ window.onload = () => {
       }
     })
     .then(todoList => {
+      const userTasks = todoList.filter(task => task.userId === userId);
+
       const todoListContainer = document.getElementById('todo-list');
       todoListContainer.innerHTML = '';
 
-      todoList.forEach(task => {
+      userTasks.forEach(task => {
         const taskContainer = document.createElement('div');
         taskContainer.setAttribute('data-task-id', task.id);
 

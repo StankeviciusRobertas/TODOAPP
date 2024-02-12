@@ -1,0 +1,8 @@
+[
+    {
+        "name":"Amy",
+        "age": 18,
+        "online": false,
+        "languages": ["English", "Lithuania", "German"]
+    }
+]

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Quiz game</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="quizscript.css" />
+  </head>
+  <body>
+    <div id="quiz-container">
+      <div class="question" id="question1">
+        <p>What is the capital of France?</p>
+        <div class="choices">
+          <input
+            type="radio"
+            name="q1"
+            value="Paris"
+            id="q1a"
+            class="choice choice-correct"
+          />Paris
+          <br />
+          <input
+            type="radio"
+            name="q1"
+            value="London"
+            id="q1b"
+            class="choice choice-incorrect"
+          />London
+          <br />
+          <input
+            type="radio"
+            name="q1"
+            value="Berlin"
+            id="q1c"
+            class="choice choice-incorrect"
+          />Berlin
+          <br />
+          <!-- Add More options here -->
+        </div>
+      </div>
+
+      <div class="question" id="question2">
+        <!-- Add More questions here -->
+        <p>What company was originally called "Cadabra"?</p>
+        <div class="choices">
+          <input
+            type="radio"
+            name="q2"
+            value="Google"
+            id="q2a"
+            class="choice choice-incorrect"
+          />Google
+          <br />
+          <input
+            type="radio"
+            name="q2"
+            value="Amazon"
+            id="q2b"
+            class="choice choice-correct"
+          />Amazon
+          <br />
+          <input
+            type="radio"
+            name="q2"
+            value="Space-x"
+            id="q2c"
+            class="choice choice-incorrect"
+          />Space-x
+          <br />
+        </div>
+      </div>
+
+      <div class="question" id="question3">
+        <!-- Add More questions here -->
+        <p>What country drinks the most coffee per capital?</p>
+        <div class="choices">
+          <input
+            type="radio"
+            name="q3"
+            value="Lithuania"
+            id="q3a"
+            class="choice choice-incorrect"
+          />Lithuania
+          <br />
+          <input
+            type="radio"
+            name="q3"
+            value="England"
+            id="q3b"
+            class="choice choice-incorrect"
+          />England
+          <br />
+          <input
+            type="radio"
+            name="q3"
+            value="Finland"
+            id="q3c"
+            class="choice choice-correct"
+          />Finland
+          <br />
+        </div>
+      </div>
+
+      <div>
+        <button id="submit" onclick="submit()">Pateikti</button>
+        <!-- Add Reset button there -->
+        <button id="reset" onclick="reset()">Reset</button>
+      </div>
+
+      <div id="result" class="result">
+        <!-- show result here -->
+      </div>
+    </div>
+
+    <script src="quiz.js" async defer></script>
+  </body>
+</html>

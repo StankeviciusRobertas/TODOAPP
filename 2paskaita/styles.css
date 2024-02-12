@@ -1,0 +1,70 @@
+h3{
+    color: green;
+    font-size: 12px;
+    background-color: violet;
+}
+
+span{
+    color: red;
+    font-weight: bolder;
+}
+
+.box{
+background-color: yellow;
+margin: 10px;
+}
+
+#manoid{
+    color: blue;
+    text-align: center;
+    margin: 15px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.container > .box {
+    border: 3px solid green;
+}
+a:hover {
+    color: red;
+}
+
+p:first-child{
+    font-weight: bolder;
+    color: rosybrown;
+}
+
+.pelem::before {
+    content: "Start -";
+    color: red;
+}
+
+.pelem::after {
+    content: " - End";
+    color: blueviolet;
+}
+
+.big-test {
+    font-size: 30px;
+}
+
+.w-200{
+    width: 200px;
+}
+
+
+.flag {
+    width: 200px;
+    height: 30px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.flag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;  
+    z-index: 2;
+}

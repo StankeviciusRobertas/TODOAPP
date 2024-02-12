@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>DOM lesson</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Hello HTML DOM</h1>
+    <h2>GetElementsByTagName()</h2>
+    <ul>
+      <li class="drink coffee">Coffee</li>
+      <li class="drink tea">
+        Tea
+        <ul>
+          <li>Black Tea</li>
+          <li>Green Tea</li>
+        </ul>
+      </li>
+      <li class="drink water">Water</li>
+      <li class="drink milk">Milk</li>
+    </ul>
+    <p>
+      <button onclick="changeLi()">Pakeisti li</button>
+    </p>
+    <p>
+      <button onclick="addMilk()">Prideti pieno</button>
+    </p>
+    <div>
+      <button
+        onclick="document.getElementById('element_count').innerHTML = countLi()"
+      >
+        Suskaiciuoti kiek yra gerimu inline
+      </button>
+      </div>
+      <button onclick="countDrinks()">
+        Suskaiciuoti kiek yra gerimu is skripto
+      </button>
+    </div>
+      <div id="element_count">not counted</div>
+
+      <!-- ------------------- -->
+      <p>
+        <button onclick="changeAllMilkToAlmond()">Pakeisti visus Milk i Almond drink</button>
+      </p>
+
+      <p>
+        <button onclick="changeWaterBgColorToBlue()">Pakeisti Water fono spalva i melyna</button>
+      </p>
+
+      <p>
+        <button onclick="changeWaterClass()">Pakeisti Water fono spalva i melyna naudojant klase</button>
+      </p>
+    
+
+    <br /><br /><br /><br /><br /><br />
+    <script src="script.js" async defer></script>
+  </body>
+</html>
