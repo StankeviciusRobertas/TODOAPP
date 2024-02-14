@@ -25,6 +25,9 @@ pwShowHide.forEach((icon) => {
 
 signupBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    // Clear the error container
+    const errorContainer = document.getElementById('error-container');
+    errorContainer.innerHTML = '';
     formContainer.classList.add("active");
 });
 loginBtn.addEventListener("click", (e) => {
@@ -69,27 +72,25 @@ window.onload = () => {
                 window.location.href = 'http://127.0.0.1:5500/userInfo/userInfo.html';
             })
             .catch(error => {
+                // Clear the error container
+                const errorContainer = document.getElementById('error-container');
+                while (errorContainer.firstChild) {
+                    errorContainer.removeChild(errorContainer.firstChild);
+                }
                 var newElement = document.createElement('p');
                 newElement.style.backgroundColor = 'red';
                 newElement.style.color = 'white';
                 // priskiriam zinute
                 newElement.innerText = 'Vartotojas arba slaptazodis yra netinkami ';
+
+
                 // isvedam i web'a zinute
                 const form = document.getElementById('error-container');
                 form.append(newElement);
+
                 //alert("Neteisingas user name arba slaptazodis");
-                const errorContainer = document.getElementById('error-container');
+                errorContainer = document.getElementById('error-container');
 
-                // Isvalom pries tai buvusius error
-                while (errorContainer.firstChild) {
-                    errorContainer.removeChild(errorContainer.firstChild);
-                }
-
-                // Append naujus error
-                errorContainer.appendChild(newElement);
-                while (errorContainer.firstChild) {
-                    errorContainer.removeChild(errorContainer.firstChild);
-                }
             });
     });
 
@@ -101,6 +102,7 @@ window.onload = () => {
         const password = document.getElementById('signup-password').value;
 
         //sessionStorage.setItem('userName', fname);
+
 
 
         fetch(`https://localhost:7032/api/Accounts/SignUp`,

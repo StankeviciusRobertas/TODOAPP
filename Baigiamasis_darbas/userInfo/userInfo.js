@@ -26,7 +26,7 @@ function saveUserInfo() {
 
 function editUserInfo() {
     // Redirect to the desired page
-    window.location.href = "http://127.0.0.1:5500/userInfoUpdate/userInfoUpdate.html"; // Replace "editUserInfoPage.html" with the desired page URL
+    window.location.href = "http://127.0.0.1:5500/userInfoUpdate/userInfoUpdate.html";
 }
 
 function logout() {
@@ -40,6 +40,7 @@ function logout() {
     document.getElementById("email").textContent = "";
     document.getElementById("phone-number").textContent = "";
 
+    const token = sessionStorage.removeItem('token');
     // Redirect to the main page
     window.location.href = 'http://127.0.0.1:5500/index.html';
 }
@@ -58,10 +59,16 @@ function parseJwtForUserId(token) {
     return decodedToken.nameid;
 }
 
+function isAdmin(token) {
+    const decodedToken = decodeToken(token);
+    const roles = decodedToken.role; // Assuming the roles are stored in the token as an array
+    return roles.includes('admin');
+}
 
 //Get user info
 window.onload = () => {
 
+    //loading user info
     const token = sessionStorage.getItem('token');
     if (token) {
         const userId = parseJwtForUserId(token);
@@ -142,5 +149,93 @@ window.onload = () => {
             .catch(error => {
                 console.error('Error:', error);
             });
+
+        if (isAdmin(token)) {
+            fetch(`https://localhost:7032/api/Accounts`, {
+                method: 'GET',
+                headers: {
+                    'Content-type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Failed to accounts');
+                    }
+                })
+                .then(accounts => {
+                    // Create header for the accounts
+                    var header = document.createElement('h2');
+                    header.textContent = 'Accounts';
+                    document.getElementById('accounts-list').appendChild(header);
+
+                    accounts.forEach(account => {
+                        // Create a container div for each account
+                        var accountContainer = document.createElement('div');
+                        accountContainer.classList.add('account-container');
+
+                        // Create a new paragraph element for the account information
+                        var accountInfo = document.createElement('p');
+                        accountInfo.textContent = `ID: ${account.id}, Name: ${account.userName}`;
+
+                        if (account.role === 'admin') {
+                            // If user is an admin, display "Admin" next to the name
+                            accountInfo.textContent += ' (Admin)';
+                        }
+
+                        // Append the account information to the container
+                        accountContainer.appendChild(accountInfo);
+
+                        // Create a delete button icon
+                        var deleteIcon = document.createElement('span');
+                        deleteIcon.classList.add('delete-icon');
+                        deleteIcon.textContent = '❌'; // Unicode character for the delete icon
+                        deleteIcon.addEventListener('click', function () {
+                            // Call a function to delete the account
+                            deleteAccount(account.id);
+                            // Remove the account container from the DOM
+                            accountContainer.remove();
+                        });
+
+                        // Append the delete icon to the container
+                        accountContainer.appendChild(deleteIcon);
+
+                        // Append the container to the accounts list
+                        document.getElementById('accounts-list').appendChild(accountContainer);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+            function deleteAccount(accountId) {
+                // Construct the URL for the delete endpoint
+                var deleteUrl = `https://localhost:7032/api/Accounts/${accountId}`;
+
+                // Send a DELETE request to the server
+                fetch(deleteUrl, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            // Account deleted successfully
+                            console.log(`Account ${accountId} deleted successfully.`);
+                        } else {
+                            // Failed to delete the account
+                            console.error('Failed to delete account.');
+                        }
+                    })
+                    .catch(error => {
+                        // Error handling
+                        console.error('Error:', error);
+                    });
+            }
+        }
     }
 }

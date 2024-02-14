@@ -58,23 +58,98 @@ body {
 /* Common button styling */
 .button {
   color: #fff;
+  padding: 6px 24px;
+  border: 2px solid #fff;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.form_container .button {
+  background: #7d2ae8;
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+#logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  /* Add additional styling if needed */
+}
+
+.header {
+  position: top;
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+  padding: 0 20px;
+}
+.nav {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav,
+.nav_item {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_logo,
+.nav_link,
+.button {
+    color: #fff;
+}
+
+.nav_logo {
+    font-size: 25px;
+    margin-left: 140px; /* Adjust the left margin as needed */
+    margin-top: 0;
+}
+
+.nav {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #7d2ae8;
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
-/* Hover effect */
-.button:hover {
+button:hover {
   background-color: #6c24a3;
 }
 
-/* Active state effect */
-.button:active {
-  transform: scale(0.98);
+/* Style the container for each account */
+.account-container {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically center items */
 }
 
-/* Edit button specific styling */
-.button.edit {
-  background-color: #7d2ae8;
+/* Style the delete icon */
+.delete-icon {
+  cursor: pointer;
+  color: red; /* Change color as needed */
+  margin-left: 10px; /* Adjust margin as needed */
 }

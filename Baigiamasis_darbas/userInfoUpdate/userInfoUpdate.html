@@ -19,34 +19,50 @@
     <div class="user-info-container">
       <div class="profile-section">
         <div class="profile-photo">
+          <h2 id="user-photo">User photo</h2>
           <img id="profile-photo" src="profile-photo.jpg" alt="Profile Photo" />
-          <input type="file" id="profile-photo-input" />
+          <input type="file" name="Image" id="profile-photo-input" />
+          <button id="upload-photo-button" onclick="uploadUserPhoto()">
+            Upload Photo
+          </button>
         </div>
         <div class="user-details">
-          <h2 id="name">User profile-photo</h2>
+          <h2 id="name">User info</h2>
           <label for="name">Name:</label>
-          <input type="text" id="name-input" value="Name" />
+          <input type="text" id="name-input" placeholder="Name" />
 
           <label for="surname">Surname:</label>
-          <input type="text" id="surname-input" value="Surname" />
+          <input type="text" id="surname-input" placeholder="Surname" />
 
           <label for="personal-code">Personal Code:</label>
-          <input type="text" id="personal-code-input" value="XXXX" />
+          <input type="text" id="personal-code-input" placeholder="XXXX" />
           <p id="email">
             Email:
-            <input type="email" id="email-input" value="example@example.com" />
+            <input
+              type="email"
+              id="email-input"
+              placeholder="example@example.com"
+            />
           </p>
           <p id="phone-number">
             Phone Number:
-            <input type="tel" id="phone-number-input" value="+1234567890" />
+            <input
+              type="tel"
+              id="phone-number-input"
+              placeholder="+1234567890"
+            />
           </p>
         </div>
       </div>
       <div class="address-section">
         <h2>Address</h2>
+        <label for="city">City:</label>
         <input type="text" id="city-input" placeholder="City" />
+        <label for="street">Street:</label>
         <input type="text" id="street-input" placeholder="Street" />
+        <label for="house-number">House Number:</label>
         <input type="text" id="house-number-input" placeholder="House Number" />
+        <label for="flat-number">Flat Number:</label>
         <input type="text" id="flat-number-input" placeholder="Flat Number" />
       </div>
       <button id="save-button" onclick="saveUserInfo()">Save</button>
